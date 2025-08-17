@@ -14,7 +14,6 @@ Isliye professional practice hai ki server ya entry point file ke bilkul upar ye
 .gitignore me .env add karo.
 Production me hosting service ke environment variables me ye values manually set karo.
 */
-
 // 'npm i express' kr k humne express package ko install , ab neeche dekho hum isko use kaise krte hai
 const express = require('express')
 // Express ek chhota sa helper hai jo tumhara server banana asaan bana deta hai. 
@@ -30,6 +29,10 @@ Agar tum CORS enable nahi karoge, to browser bolega — "Blocked by CORS policy"
 
 const app = express()
 // ab jo cheez laayi usko express naam k variable mein store krdiya takki hum isko aage use kr sake
+
+const connectToDb = require('./db/db')
+
+connectToDb()
 
 app.use(cors())
 /* Bhai backend pe koi bhi domain se request aaye, allow kar de.
